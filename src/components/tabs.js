@@ -1,21 +1,5 @@
 import axios from 'axios';
 
-const Tabs = (topics) => {
-  const topicsMain = document.createElement("div");
-
-  topics.forEach((linkText) => {
-    const tabLink = document.createElement("div");
-    tabLink.classList.add("tab");
-    topicsMain.appendChild(tabLink);
-    tabLink.textContent = linkText;
-  });
-
-  topicsMain.classList.add("topics");
-
-
-  console.log(topicsMain);
-  return topicsMain;
-
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -30,7 +14,34 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+const Tabs = (topics) => {
+  
+  // CREATE ELEMENT
+  
+  const topicsMain = document.createElement("div");
+  
+  // ADD CLASS
+  
+  topicsMain.classList.add("topics");
+
+  topics.forEach((linkText) => {
+    const tabLink = document.createElement("div");
+    tabLink.classList.add("tab");
+    topicsMain.appendChild(tabLink);
+    tabLink.textContent = linkText;
+  });
+
+  return topicsMain;
 }
+
+  // TASK 4
+  // ---------------------
+  // Implement this function which takes a css selector as its only argument.
+  // It should obtain topics from this endpoint: `http://localhost:5001/api/topics` (test it with a console.log!).
+  // Find the array of topics inside the response, and create the tabs using the Tabs component.
+  // Append the tabs to the element in the DOM that matches the selector passed to the function.
+  //
 
 const tabsAppender = (selector) => {
   axios.get(`http://localhost:5001/api/topics`)
@@ -40,14 +51,6 @@ const tabsAppender = (selector) => {
   .catch(err => {
     console.log(err);
   })
-
-  // TASK 4
-  // ---------------------
-  // Implement this function which takes a css selector as its only argument.
-  // It should obtain topics from this endpoint: `http://localhost:5001/api/topics` (test it with a console.log!).
-  // Find the array of topics inside the response, and create the tabs using the Tabs component.
-  // Append the tabs to the element in the DOM that matches the selector passed to the function.
-  //
 }
 
 export { Tabs, tabsAppender }

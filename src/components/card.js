@@ -1,4 +1,5 @@
-const Card = (article) => {
+import axios from 'axios';
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,9 +18,58 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+const Card = (article) => {
+
+// ADD ELEMENTS 
+
+const cardMain = document.createElement("div");
+const cardHeadline = document.createElement("div");
+const cardAuthor = document.createElement("div");
+const cardImage = document.createElement("div");
+const image = document.createElement("img");
+const byAuthor = document.createElement("span");
+
+// SET CLASS NAMES
+
+cardMain.classList.add("card");
+cardHeadline.classList.add("headline");
+cardAuthor.classList.add("author");
+cardImage.classList.add("img-container");
+
+// ADD TEXT
+
+image.src = article.authorPhoto;
+cardHeadline.textContent = article.headline;
+byAuthor.textContent = ` By ${article.authorName}`;
+
+// CREATE HIERARCHY
+
+cardMain.appendChild(cardHeadline);
+cardMain.appendChild(cardAuthor);
+cardAuthor.appendChild(cardImage);
+cardImage.appendChild(image);
+cardAuthor.appendChild(byAuthor);
+
+cardMain.addEventListener("click", () => {
+  console.log(`Author: ${cardHeadline}`);
+});
+
+return cardMain;
+
 }
 
-const cardAppender = (selector) => {
+
+// CONSOLE.LOG TEST
+
+// axios.get(`http://localhost:5001/api/articles`)
+// .then(resp => {
+//   console.log(resp);
+// })
+// .catch(err => {
+//   console.log(err);
+// })
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -28,6 +78,24 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+
+const cardAppender = (selector) => {
+  axios.get(`http://localhost:5001/api/articles`)
+  .then(resp => {
+   const container = document.querySelector(selector);
+   const data = resp.data.articles;
+   const names = Object.keys(data);
+   names.map(item => {
+    const newData = data[item];
+    newData.forEach(elem => {
+      container.appendChild(Card(elem))
+    });
+   })
+  })
+  .catch(err => {
+    console.log(err);
+  })
 }
 
 export { Card, cardAppender }

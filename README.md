@@ -10,10 +10,10 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [X] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [X] Open the assignment in Canvas and click on the "Set up git" option.
+- [X] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [X] Check to see that Codegrade has accepted your git submission.
 
 ## Project Instructions
 
@@ -27,16 +27,16 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Instructions
 
-- [ ] Navigate to the root of the project with your command line.
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
-- [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to `http://localhost:3000`
-- [ ] In a separate terminal, run `npm test` to run tests.
+- [X] Navigate to the root of the project with your command line.
+- [X] Run `npm install` to download the dependencies listed in the `package.json` file.
+- [X] Run `npm start` to compile the project and serve it.
+- [X] Navigate Chrome to `http://localhost:3000`
+- [X] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 
-- [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
-- [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
+- [X] Steps 1 and 2 are explained inside the `src/components/header.js` file.
+- [X] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
@@ -62,10 +62,10 @@ Demonstrate your understanding of this week's concepts by answering the followin
 1. What is the DOM? 
     DOM (Document Object Model) is a representation of the HTML elements of a webpage.
 2. What is an event?
-    Whenever something happens in the browser such as scroll through a page or clicking a button the browser knows about it and creates an event object. The event object contains information about the event that fired
+    Whenever something happens in the browser such as scroll through a page or clicking a button the browser knows about it and creates an event object. The event object contains information about the event that fired.
 3. What is an event listener?
     An event listener listens for a specific event to happen. An event listener is designed to process a specific event.
 4. Why would we convert a NodeList into an Array?
     To be able to use array methods on the NodeList. Such as .map, .reduce, etc.
 5. What is a component? 
-    Component is a function 
+    Component is a function. 
