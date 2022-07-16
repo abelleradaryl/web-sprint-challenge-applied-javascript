@@ -52,7 +52,7 @@ cardImage.appendChild(image);
 cardAuthor.appendChild(byAuthor);
 
 cardMain.addEventListener("click", () => {
-  console.log(`Author: ${cardHeadline}`);
+  console.log(`Author: ${article.authorName}`);
 });
 
 return cardMain;
@@ -60,15 +60,15 @@ return cardMain;
 }
 
 
-// CONSOLE.LOG TEST
+  // CONSOLE.LOG TEST
 
-// axios.get(`http://localhost:5001/api/articles`)
-// .then(resp => {
-//   console.log(resp);
-// })
-// .catch(err => {
-//   console.log(err);
-// })
+  axios.get(`http://localhost:5001/api/articles`)
+  .then(resp => {
+    console.log(resp);
+  })
+  .catch(err => {
+    console.log(err);
+  })
 
   // TASK 6
   // ---------------------

@@ -21,7 +21,7 @@ const Tabs = (topics) => {
   
   const topicsMain = document.createElement("div");
   
-  // ADD CLASS
+  // SET CLASS NAMES
   
   topicsMain.classList.add("topics");
 
