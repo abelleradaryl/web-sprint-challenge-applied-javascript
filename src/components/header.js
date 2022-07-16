@@ -13,7 +13,7 @@
 
 const Header = (title, date, temp) => {
   
-// ADD ELEMENTS 
+  // ADD ELEMENTS 
 
   const headerMain = document.createElement("div");
   const headerDate = document.createElement("span");
@@ -43,7 +43,7 @@ const Header = (title, date, temp) => {
   return headerMain;
 
 }
-// console.log(Header("STORY", "DEC, 9th 2022", "99"))
+  // console.log(Header("STORY", "DEC, 9th 2022", "99"))
 
   // TASK 2
   // ---------------------
@@ -53,7 +53,7 @@ const Header = (title, date, temp) => {
   //
 
 const headerAppender = (selector) => {
-  document.querySelector(selector).appendChild(Header("Bloom Times", "12/09/2022", "115 Degrees"));
+  document.querySelector(selector).appendChild(Header("Bloomtech Times", "12/09/2022", "115 Degrees"));
 }
 
 export { Header, headerAppender }
